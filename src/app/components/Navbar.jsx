@@ -7,31 +7,33 @@ import BottomNavbar from "./BottomNavbar";
 const Navbar = () => {
   return (
     <>
-    <div className="hidden md:block">
+    <div className="w-full hidden md:block" style={{ position: "fixed", zIndex: 100 }}>
     <nav
         className="bg-white p-4 flex justify-center items-center"
         style={{ boxShadow: "0px 10px 65.2px -26px rgba(0, 0, 0, 0.44)" }}
       >
         <div className="w-[90%] flex justify-between items-center">
           {/* Left side logo */}
+          <Link href="#home">
           <div className="flex items-center">
             <span className="text-black text-2xl font-black leading-normal">
               Logo
             </span>
           </div>
+          </Link>
 
           {/* Right side navigation links */}
           <div className="flex items-center text-black text-opacity-85 text-base font-medium">
-            <Link href="#" style={{ marginRight: "34px" }}>
+            <Link href="#about" style={{ marginRight: "34px" }}>
               About
             </Link>
-            <Link href="#" style={{ marginRight: "34px" }}>
+            <Link href="#projects" style={{ marginRight: "34px" }}>
               Projects
             </Link>
-            <Link href="#" style={{ marginRight: "34px" }}>
+            <Link href="#skills" style={{ marginRight: "34px" }}>
               Skills
             </Link>
-            <Link href="#" style={{ marginRight: "34px" }}>
+            <Link href="#services" style={{ marginRight: "34px" }}>
               Services
             </Link>
             <Button variant="own" size="own" className="rounded-full">

@@ -89,7 +89,7 @@ const services = [
     description:
       "I craft visually appealing user interfaces using Next.js, React, Redux, Tailwind CSS, Bootstrap, and Material UI, ensuring responsive designs .",
       title_color:'text-white',
-      des_color:'text-white text-opacity-60',
+      des_color:'text-white text-opacity-85',
       bg_color:'bg-[#5C5BDB]',
   },
   {
@@ -149,26 +149,26 @@ const services = [
 
 const ServiceSection = () => {
   return (
-    <div className="w-[90%] mx-auto mt-[77px]">
+    <div className="w-[90%] mx-auto mt-[77px]" id="services">
       <p className="text-[#FF8911] text-center text-[18px] font-semibold leading-[150%] tracking-[-0.36px]">
         SERVICES
       </p>
-      <p className="text-black text-opacity-85  text-center text-[38px] font-bold leading-[150%] tracking-[-0.76px]">
+      <p className="text-black text-opacity-85 mb-[47px]  text-center text-[25px] sm:text-[38px] font-bold leading-[150%] tracking-[-0.76px]">
         Expertise Service! Let's check it out
       </p>
-      <div className="grid grid-cols-3 mt-[47px]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {services.map((item, index) => {
           return (
             <div
               key={index}
-              className={`w-[367px] h-[339px] rounded-[20px] ${item.bg_color} flex flex-col justify-center items-center`}
+              className={`px-4 py-7 rounded-[20px] ${item.bg_color} flex flex-col justify-center items-center`}
             >
               {/* <Image src={item.src} alt={`icon-${index}`} width={150} height={150} /> */}
               {item.src}
               <p className={`mt-5 ${item.title_color} text-center text-[18px] font-semibold leading-[150%] tracking-[-0.36px]`}>
                 {item.title}
               </p>
-              <p className={`px-[33px] mt-3.5 ${item.des_color} text-center text-[14px] font-normal leading-[126%] tracking-[0.28px]`}>
+              <p className={`mt-3.5 ${item.des_color} text-center text-[14px] font-normal leading-[126%] tracking-[0.28px]`}>
                 {item.description}
               </p>
             </div>
