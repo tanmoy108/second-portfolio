@@ -1,27 +1,41 @@
 "use client";
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { Toaster } from "@/components/ui/toaster"
+import { useToast } from "@/components/ui/use-toast"
 
-const ContactSection = ({PUBLIC_KEY, TEMPLATE_ID, SERVICE_ID}) => {
+
+const ContactSection = ({ PUBLIC_KEY, TEMPLATE_ID, SERVICE_ID }) => {
   const form = useRef();
-
+  const { toast } = useToast()
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
       .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
-        publicKey:'5KZZD01LEtlpC6UDv'},
-      )
+        publicKey: "5KZZD01LEtlpC6UDv",
+      })
       .then(
         () => {
-          console.log("SUCCESS!");
+          // console.log("SUCCESS!");
+          toast({
+            variant: "success",
+            title: "Email successfull",
+            description: "A message has been sent.",
+          })
+          form.current.reset();
         },
         (error) => {
-          console.log("FAILED...", error.text);
+          // console.log("FAILED...", error);
+          toast({
+            variant: "destructive",
+            title: "Email Failed!",
+            description: "There was a problem with your mail.",
+          })
         }
       );
   };
   return (
-    <div className="w-[90%] mx-auto mt-[77px]" id="contact">
+    <div className="w-[90%]  2xl:w-[60%] mx-auto mt-[77px]" id="contact">
       <p className="text-[#FF8911] text-center text-[18px] font-semibold leading-[150%] tracking-[-0.36px]">
         CONTACT
       </p>
@@ -36,7 +50,7 @@ const ContactSection = ({PUBLIC_KEY, TEMPLATE_ID, SERVICE_ID}) => {
             name="user_name"
             placeholder="Name"
             required
-            className="w-full text-black text-opacity-60 border rounded-[9px] bg-[#5C5BDB] font-normal leading-[150%] tracking-[-0.32px] bg-opacity-10  py-2 px-3 focus:outline-none focus:border-[#5C5BDB]"
+            className="w-full text-black text-opacity-60 border rounded-[9px] bg-[#5C5BDB] font-normal leading-[150%] tracking-[-0.32px] bg-opacity-10  py-2 px-5 focus:outline-none focus:border-[#5C5BDB]"
           />
           <input
             type="email"
@@ -44,7 +58,7 @@ const ContactSection = ({PUBLIC_KEY, TEMPLATE_ID, SERVICE_ID}) => {
             name="user_email"
             placeholder="E-mail"
             required
-            className="w-full text-black text-opacity-60 border rounded-[9px] bg-[#5C5BDB] font-normal leading-[150%] tracking-[-0.32px] bg-opacity-10  py-2 px-3 focus:outline-none focus:border-[#5C5BDB]"
+            className="w-full text-black text-opacity-60 border rounded-[9px] bg-[#5C5BDB] font-normal leading-[150%] tracking-[-0.32px] bg-opacity-10  py-2 px-5 focus:outline-none focus:border-[#5C5BDB]"
           />
           <div className="md:col-span-2">
             <textarea
@@ -53,7 +67,7 @@ const ContactSection = ({PUBLIC_KEY, TEMPLATE_ID, SERVICE_ID}) => {
               cols=""
               placeholder="Message"
               required
-              className="w-full text-black text-opacity-60 border rounded-[9px] bg-[#5C5BDB] font-normal leading-[150%] tracking-[-0.32px] bg-opacity-10 py-2 px-3 focus:outline-none focus:border-[#5C5BDB]"
+              className="w-full text-black text-opacity-60 border rounded-[9px] bg-[#5C5BDB] font-normal leading-[150%] tracking-[-0.32px] bg-opacity-10 py-2 px-5 focus:outline-none focus:border-[#5C5BDB]"
               defaultValue={""}
             />
           </div>
@@ -68,6 +82,7 @@ const ContactSection = ({PUBLIC_KEY, TEMPLATE_ID, SERVICE_ID}) => {
           </div>
         </div>
       </form>
+      <Toaster />
     </div>
   );
 };

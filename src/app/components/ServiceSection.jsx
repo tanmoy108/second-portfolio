@@ -59,9 +59,9 @@ const services = [
     title: "Back-End Development",
     description:
       "I specialize in backend development with Node.js, Express.js, Next.js, JWT, MongoDB, and Mongoose, creating secure APIs for robust web applications.",
-      title_color:'text-black text-opacity-85',
-      des_color:'text-black text-opacity-60',
-      bg_color:'bg-[#F4F4F4]',
+    title_color: "text-black text-opacity-85",
+    des_color: "text-black text-opacity-60",
+    bg_color: "bg-[#F4F4F4]",
   },
   {
     src: (
@@ -88,9 +88,9 @@ const services = [
     title: "Front-End Development",
     description:
       "I craft visually appealing user interfaces using Next.js, React, Redux, Tailwind CSS, Bootstrap, and Material UI, ensuring responsive designs .",
-      title_color:'text-white',
-      des_color:'text-white text-opacity-85',
-      bg_color:'bg-[#5C5BDB]',
+    title_color: "text-white",
+    des_color: "text-white text-opacity-85",
+    bg_color: "bg-[#5C5BDB]",
   },
   {
     src: (
@@ -141,15 +141,15 @@ const services = [
     title: "Graphic Design",
     description:
       "I'm a creative expert in Adobe Photoshop and Illustrator, Figma, crafting social media posts, flyers, cards, book covers, illustrations.",
-      title_color:'text-black text-opacity-85',
-      des_color:'text-black text-opacity-60',
-      bg_color:'bg-[#F4F4F4]',
+    title_color: "text-black text-opacity-85",
+    des_color: "text-black text-opacity-60",
+    bg_color: "bg-[#F4F4F4]",
   },
 ];
 
 const ServiceSection = () => {
   return (
-    <div className="w-[90%] mx-auto mt-[77px]" id="services">
+    <div className="w-[90%] 2xl:w-[60%] mx-auto mt-[77px]" id="services">
       <p className="text-[#FF8911] text-center text-[18px] font-semibold leading-[150%] tracking-[-0.36px]">
         SERVICES
       </p>
@@ -165,10 +165,14 @@ const ServiceSection = () => {
             >
               {/* <Image src={item.src} alt={`icon-${index}`} width={150} height={150} /> */}
               {item.src}
-              <p className={`mt-5 ${item.title_color} text-center text-[18px] font-semibold leading-[150%] tracking-[-0.36px]`}>
+              <p
+                className={`mt-5 ${item.title_color} text-center text-[18px] font-semibold leading-[150%] tracking-[-0.36px]`}
+              >
                 {item.title}
               </p>
-              <p className={`mt-3.5 ${item.des_color} text-center text-[14px] font-normal leading-[126%] tracking-[0.28px]`}>
+              <p
+                className={`mt-3.5 ${item.des_color} text-center text-[14px] font-normal leading-[126%] tracking-[0.28px]`}
+              >
                 {item.description}
               </p>
             </div>

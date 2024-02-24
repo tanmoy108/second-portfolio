@@ -181,9 +181,9 @@ const HeroSection = () => {
           <Image
             width={300}
             height={300}
-            src="/images/my-picture.svg"
-            alt="Description of your image"
-            className="w-48 h-48 object-cover rounded-full"
+            src="/images/my-picture2.jpg"
+            alt="my image"
+            className="w-48 h-48 object-cover rounded-full border-[#FF8911] border-4"
           />
 
           <p className="text-white text-center text-[25px] sm:text-[38px] font-bold leading-normal tracking-[-0.76px] mt-4">
@@ -196,24 +196,24 @@ const HeroSection = () => {
 
           <div className="mt-5 flex flex-col sm:flex-row justify-center items-center gap-5 z-10">
             <Link href="#projects">
-            <Button variant="own" size="own">
-              My Work
-            </Button>
+              <Button variant="own" size="own">
+                My Work
+              </Button>
             </Link>
             <Link href="#contact">
-            <Button
-              variant="outlineOwn"
-              size="own"
-              className="gap-2.5  mb-10 sm:mb-0"
-            >
-              <Image
-                width={15}
-                alt="hello icon"
-                height={15}
-                src="/images/say-hello.svg"
-              />{" "}
-              Say hello
-            </Button>
+              <Button
+                variant="outlineOwn"
+                size="own"
+                className="gap-2.5  mb-10 sm:mb-0"
+              >
+                <Image
+                  width={15}
+                  alt="hello icon"
+                  height={15}
+                  src="/images/say-hello.svg"
+                />{" "}
+                Say hello
+              </Button>
             </Link>
           </div>
         </div>
