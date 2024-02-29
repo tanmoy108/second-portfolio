@@ -1,3 +1,4 @@
+import { BASE_URL } from "@/lib/constant";
 import React from "react";
 
 const experiences = [
@@ -10,7 +11,7 @@ const experiences = [
 ];
 
 const GetEducations = async () => {
-  const fetchData = await fetch("http://localhost:3000/api/educations", {
+  const fetchData = await fetch(`${BASE_URL}/api/educations`, {
     next: { revalidate: 10 },
   });
   const data = await fetchData.json();
@@ -18,6 +19,10 @@ const GetEducations = async () => {
 };
 
 const EducationExperienceSection = async () => {
+  if(!BASE_URL)
+  {
+    return null
+  }
   const educations = await GetEducations();
   return (
     <div className="mt-[77px]" id="educations">

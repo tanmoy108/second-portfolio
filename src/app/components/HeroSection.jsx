@@ -204,7 +204,7 @@ const HeroSection = () => {
               <Button
                 variant="outlineOwn"
                 size="own"
-                className="gap-2.5  mb-10 sm:mb-0"
+                className="gap-2.5  mb-10 sm:mb-0 hover:bg-[#FF8911]"
               >
                 <Image
                   width={15}

@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import { BASE_URL } from "@/lib/constant";
 
 const GetSkills = async () => {
-  const fetchData = await fetch("http://localhost:3000/api/skills", {
+  const fetchData = await fetch(`${BASE_URL}/api/skills`, {
     next: { revalidate: 10 },
   });
   const data = await fetchData.json();
@@ -10,6 +11,10 @@ const GetSkills = async () => {
 };
 
 const SkillSection = async () => {
+  if(!BASE_URL)
+  {
+    return null
+  }
   const skills = await GetSkills();
   return (
     <div className="w-[90%]  2xl:w-[60%] mx-auto mt-[77px]" id="skills">

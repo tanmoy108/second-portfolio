@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { BASE_URL } from "@/lib/constant";
 
 const GetEducations = async () => {
-  const fetchData = await fetch("http://localhost:3000/api/projects", {
+  const fetchData = await fetch(`${BASE_URL}/api/projects`, {
     next: { revalidate: 10 },
   });
   const data = await fetchData.json();
@@ -11,6 +12,10 @@ const GetEducations = async () => {
 };
 
 const ProjectSection = async () => {
+  if(!BASE_URL)
+  {
+    return null
+  }
   const projects = await GetEducations();
   return (
     <div className="w-[90%] 2xl:w-[60%] mx-auto mt-[77px]" id="projects">
@@ -20,7 +25,7 @@ const ProjectSection = async () => {
       <p className="text-black text-opacity-85 mb-[20px]  text-center text-[25px] sm:text-[38px] font-bold leading-[150%] tracking-[-0.76px]">
         Digital Portfolio Showcase
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3">
+      <div className="grid grid-cols-1 justify-items-center md:grid-cols-3">
         {projects &&
           Array.isArray(projects) &&
           projects.map((item, index) => {
