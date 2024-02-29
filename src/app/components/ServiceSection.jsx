@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 const services = [
@@ -154,7 +153,7 @@ const ServiceSection = () => {
         SERVICES
       </p>
       <p className="text-black text-opacity-85 mb-[47px]  text-center text-[25px] sm:text-[38px] font-bold leading-[150%] tracking-[-0.76px]">
-        Expertise Service! Let's check it out
+        Expertise Service! Let&apos;s check it out
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {services.map((item, index) => {

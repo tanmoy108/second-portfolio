@@ -44,7 +44,7 @@ const AboutSection = () => {
           </p>
           <p className=" text-justify mb-[19px] text-black text-opacity-60 text-[16px] leading-[150%] tracking-[-0.32px]">
             A MERN stack and Next.js developer with a passion for creating
-            attractive landing pages, UI design, and full-stack development. I'm
+            attractive landing pages, UI design, and full-stack development. I&apos;m
             also skilled in graphic design and committed to continuous learning
             in the ever-evolving world of web development.
           </p>
