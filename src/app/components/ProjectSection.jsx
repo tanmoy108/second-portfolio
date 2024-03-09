@@ -17,6 +17,7 @@ const ProjectSection = async () => {
     return null
   }
   const projects = await GetEducations();
+  const reverseProject = projects.reverse()
   return (
     <div className="w-[90%] 2xl:w-[60%] mx-auto mt-[77px]" id="projects">
       <p className="text-[#FF8911] text-center text-[18px] font-semibold leading-[150%] tracking-[-0.36px]">
@@ -26,9 +27,9 @@ const ProjectSection = async () => {
         Digital Portfolio Showcase
       </p>
       <div className="grid grid-cols-1 justify-items-center md:grid-cols-3">
-        {projects &&
-          Array.isArray(projects) &&
-          projects.map((item, index) => {
+        {reverseProject &&
+          Array.isArray(reverseProject) &&
+          reverseProject.map((item, index) => {
             return (
               <Link href={item?.link} key={index}  target="_blank"
               rel="noopener noreferrer">

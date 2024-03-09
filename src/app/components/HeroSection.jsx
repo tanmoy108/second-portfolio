@@ -1,7 +1,19 @@
+'use client'
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion"
+
+const motionImage = {
+  start:{
+    rotate:0
+  },
+  end:{
+    rotate:360,
+    transition:{ease: "easeInOut",duration: 6, repeat: Infinity}
+  }
+}
 
 const HeroSection = () => {
   const backgroundImage = {
@@ -178,6 +190,10 @@ const HeroSection = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center pt-0 md:pt-14">
+          <motion.div
+          variants={motionImage}
+          initial="start"
+          animate="end">
           <Image
             width={300}
             height={300}
@@ -185,6 +201,7 @@ const HeroSection = () => {
             alt="my image"
             className="w-48 h-48 object-cover rounded-full border-[#FF8911] border-4"
           />
+          </motion.div>
 
           <p className="text-white text-center text-[25px] sm:text-[38px] font-bold leading-normal tracking-[-0.76px] mt-4">
             Hi, This is Tanmoy Sharma
