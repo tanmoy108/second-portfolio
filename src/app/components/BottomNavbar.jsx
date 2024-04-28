@@ -6,7 +6,7 @@ const BottomNavbar = () => {
     <>
       <div className="fixed bottom-0 left-0 z-50 w-full h-16 py-2 bg-white border-t border-gray-200">
         <div className="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
-          <Link href="#home">
+          <Link href="/#home">
             <button
               type="button"
               className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 group"
@@ -25,7 +25,7 @@ const BottomNavbar = () => {
               </span>
             </button>
           </Link>
-          <Link href="#projects">
+          <Link href="/#projects">
             <button
               type="button"
               className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50  group"
@@ -46,7 +46,7 @@ const BottomNavbar = () => {
               </span>
             </button>
           </Link>
-          <Link href="#skills">
+          <Link href="/#skills">
             <button
               type="button"
               className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50  group"
@@ -124,7 +124,7 @@ const BottomNavbar = () => {
               </span>
             </button>
           </Link>
-          <Link href="#about">
+          <Link href="/#about">
             <button
               type="button"
               className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50  group"

@@ -18,7 +18,7 @@ const Navbar = () => {
         >
           <div className="w-[90%] flex justify-between items-center">
             {/* Left side logo */}
-            <Link href="#home">
+            <Link href="/#home">
               <div className="flex items-center">
                 <Image src={logo} alt="logo" width={94} height={55} />
               </div>
@@ -26,16 +26,16 @@ const Navbar = () => {
 
             {/* Right side navigation links */}
             <div className="flex items-center text-black text-opacity-85 text-base font-medium">
-              <Link href="#about" style={{ marginRight: "34px" }}>
+              <Link href="/#about" style={{ marginRight: "34px" }}>
                 About
               </Link>
-              <Link href="#projects" style={{ marginRight: "34px" }}>
+              <Link href="/#projects" style={{ marginRight: "34px" }}>
                 Projects
               </Link>
-              <Link href="#skills" style={{ marginRight: "34px" }}>
+              <Link href="/#skills" style={{ marginRight: "34px" }}>
                 Skills
               </Link>
-              <Link href="#services" style={{ marginRight: "34px" }}>
+              <Link href="/#services" style={{ marginRight: "34px" }}>
                 Services
               </Link>
               <Link
