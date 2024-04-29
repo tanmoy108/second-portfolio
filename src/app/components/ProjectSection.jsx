@@ -69,7 +69,7 @@ const ProjectSection = async () => {
                     className="cursor-pointer hover:opacity-80"
                   >
                     <Button variant="own" size="sm" className="rounded-full">
-                      Live Demo
+                      Live Site
                     </Button>
                   </Link>
                 </div>

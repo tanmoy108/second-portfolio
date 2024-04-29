@@ -1,5 +1,4 @@
 "use client";
-
 import RichPreview from "@/components/privew";
 import { Button } from "@/components/ui/button";
 import { BASE_URL } from "@/lib/constant";
@@ -8,11 +7,12 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Details = ({ params }) => {
+  
   const [state, setState] = useState(false);
   const [data, setData] = useState({});
   useEffect(() => {
     const GetEducations = async () => {
-      const fetchData = await fetch(`${BASE_URL}/api/projects/${params.id}`, {
+      const fetchData = await fetch(`/api/projects/${params.id}`, {
         next: { revalidate: 10 },
       });
       const data = await fetchData.json();
@@ -21,8 +21,9 @@ const Details = ({ params }) => {
     };
     GetEducations();
   }, [params.id]);
+
   return (
-    <div className="w-[90%]  2xl:w-[60%] mx-auto pt-20 md:pt-40">
+    <div className="w-[90%]  2xl:w-[60%] mx-auto pt-16 md:pt-40">
       <p className="text-[#FF8911] text-center text-[18px] font-semibold leading-[150%] tracking-[-0.36px]">
         CASE STUDY
       </p>
@@ -52,9 +53,9 @@ const Details = ({ params }) => {
               <p className="text-md font-semibold text-[#3b3b91] text-opacity-85">
                 Tool Used:
               </p>
-             {data.tools.map((item)=>{
+             {data?.tools.map((item,index)=>{
               return (
-                <div className="flex items-center gap-x-2"> <div className="w-3 h-4"> <img src="/images/tick-mark-icon.svg" /> </div> {item}</div>
+                <div key={index} className="flex items-center gap-x-2"> <div className="w-3 h-4"> <img src="/images/tick-mark-icon.svg" /> </div> {item}</div>
               )
              })}
              <Link
@@ -64,7 +65,7 @@ const Details = ({ params }) => {
                     className="cursor-pointer hover:opacity-80"
                   >
                     <Button variant="own" size="lg" className="rounded-full">
-                      Live Demo
+                      Live Site
                     </Button>
                   </Link>
             </div>
