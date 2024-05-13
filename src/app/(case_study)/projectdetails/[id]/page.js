@@ -32,8 +32,8 @@ const Details = ({ params }) => {
       </p>
       {state ? (
         <div>
-          <div className="flex flex-col md:flex-row md:justify-between gap-6">
-         <div className="flex items-center justify-center">
+          <div className="w-full flex flex-col md:flex-row md:justify-between md:items-start gap-6">
+         <div className="md:w-1/2 flex items-center justify-center">
          <Image
               src={data.image}
               alt={`project-${data.title}`}
@@ -42,9 +42,9 @@ const Details = ({ params }) => {
               className="md:order-last"
             />
          </div>
-            <div className="md:order-first gap-3 flex flex-col">
-              <p className="text-xl font-bold text-black text-opacity-85">
-                Project Name: {data.title}
+            <div className="md:w-1/2 md:order-first gap-3 flex flex-col">
+              <p className="text-xl font-bold text-[#3b3b91] text-opacity-85">
+                Project Name: <span className="text-[#24243d] "> {data.title} </span>
               </p>
               <p className="text-md font-semibold text-[#3b3b91] text-opacity-85">
                 Description:
@@ -72,7 +72,7 @@ const Details = ({ params }) => {
           </div>
         </div>
       ) : (
-        <div className="text-xl text-center">Just a sec, gathering the info!</div>
+        <div className="text-xl text-center">Just a sec, gathering the info...</div>
       )}
     </div>
   );

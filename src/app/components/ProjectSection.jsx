@@ -48,11 +48,11 @@ const ProjectSection = async () => {
                 >
                   {item?.title}
                 </p>
-                <p
+                {/* <p
                   className={`text-black text-opacity-60 text-left text-[14px] font-normal leading-[normal]`}
                 >
                   {item?.description}
-                </p>
+                </p> */}
                 <div className="flex justify-end gap-x-3 mt-4">
                   <Link  href={`/projectdetails/${item?.id}`}
                     target="_blank"

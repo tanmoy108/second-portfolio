@@ -6,7 +6,7 @@ export const revalidate = 0;
 export async function GET() {
   let projectData = [];
   try {
-    projectData = await projects.find();
+    projectData = await projects.find({delete:false});
   } catch (error) {
     if (error instanceof TypeError) {
       console.error("Caught a TypeError:", error.message);
